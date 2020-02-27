@@ -1,0 +1,15 @@
+clear all; close all; clc;
+A=imread('lena_noisy1.jpg'); 
+figure;
+subplot(1,2,1);
+imshow(A);
+subplot(1,2,2);
+imhist(A,1024);
+J = histeq(A);
+figure;imshow(J);
+figure;
+subplot(1,2,1);
+imshow(J);
+subplot(1,2,2);
+imhist(J,64);
+imwrite(J,'a1.jpg');
